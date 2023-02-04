@@ -1,0 +1,38 @@
+<h2>Profile</h2>
+<div class="profile_contents">
+  <img src="/images/profile.jpeg" width="200" height="200" />
+  <div>
+    <h3>廣内 秀有 - Shu Hirouchi</h3>
+    <p>私は都内でフロントエンドエンジニアとして働いています。</p>
+  <div>
+</div>
+
+<style>
+h2 {
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+}
+
+.profile_contents {
+  margin: 0 2rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+img {
+  object-fit: cover;
+  border-radius: 100%;
+  box-shadow: -5px -5px 20px var(--white),  5px 5px 20px var(--shadow);
+  transition: all 0.2s ease-in-out;
+}
+
+img:hover {
+  box-shadow: -2px -2px 5px var(--white), 2px 2px 5px var(--shadow);
+}
+
+p {
+  color: var(--gray);
+}
+</style>
