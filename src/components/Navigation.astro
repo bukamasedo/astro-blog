@@ -1,0 +1,57 @@
+---
+import { Icon } from 'astro-icon'
+
+interface Props {
+  color?: string;
+}
+
+const navIcons = [
+  {
+    href: '/',
+    name: 'carbon:blog',
+  },
+  {
+    href: '/about',
+    name: 'carbon:user-profile',
+  }
+]
+
+const { color = '--black' } = Astro.props;
+---
+
+<div>
+  {navIcons.map(icon => (
+    <a href={icon.href}>
+      <Icon class="icons" name={icon.name} />
+    </a>
+  ))}
+</div>
+
+<style define:vars={{ color }}>
+div {
+  display: flex;
+  gap: 1rem;
+}
+
+a {
+  width: 20px;
+  height: 20px;
+  padding: 1rem;
+  box-shadow: -5px -5px 20px var(--white),  5px 5px 20px var(--shadow);
+  border-radius: calc(1rem / 2);
+  transition: all 0.2s ease-in-out;
+  box-sizing: content-box;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+a:hover {
+  box-shadow: -2px -2px 5px var(--white), 2px 2px 5px var(--shadow);
+}
+
+.icons {
+  color: var(--gray);
+  filter: drop-shadow(1px 1px 1px var(--white));
+}
+</style>
