@@ -9,14 +9,17 @@ const navIcons = [
   {
     href: '/',
     name: 'carbon:blog',
+    title: 'Blog',
   },
   {
     href: '/tags',
     name: 'carbon:tag-group',
+    title: 'Tags',
   },
   {
     href: '/about',
     name: 'carbon:user-profile',
+    title: 'User profile',
   }
 ]
 
@@ -25,7 +28,7 @@ const { color = '--black' } = Astro.props;
 
 <div>
   {navIcons.map(icon => (
-    <a href={icon.href}>
+    <a href={icon.href} title={icon.title}>
       <Icon class="icons" name={icon.name} />
     </a>
   ))}
