@@ -1,9 +1,10 @@
 ---
-import Layout from "./Layout.astro";
+import Layout from './Layout.astro'
 import { formatDateToEng } from '../utils/formatDateToEng'
 import { Icon } from 'astro-icon'
+import Tags from '../components/Tags.astro'
 
-const { frontmatter } = Astro.props;
+const { frontmatter } = Astro.props
 const { year, month, day } = formatDateToEng(frontmatter.date)
 ---
 
@@ -15,24 +16,25 @@ const { year, month, day } = formatDateToEng(frontmatter.date)
       {`${month} ${day}, ${year}`}
     </span>
   </div>
+  <Tags tags={frontmatter.tags} style={{ marginBottom: '5rem' }} />
   <slot />
 </Layout>
 
 <style>
-div {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: var(--gray);
-}
+  div {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--gray);
+  }
 
-span {
-  font-family: 'IBM Plex Mono', monospace;
-  font-style: italic;
-}
+  span {
+    font-family: 'IBM Plex Mono', monospace;
+    font-style: italic;
+  }
 
-.icon {
-  width: 20px;
-  height: 20px;
-}
+  .icon {
+    width: 20px;
+    height: 20px;
+  }
 </style>

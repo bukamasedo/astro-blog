@@ -1,55 +1,20 @@
 ---
-import Layout from "../../layouts/Layout.astro";
-const allPosts = await Astro.glob("../posts/*.md");
-const tags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())];
-const pageTitle = "Tag Index";
+import Layout from '../../layouts/Layout.astro'
+import Tags from '../../components/Tags.astro'
+
+const allPosts = await Astro.glob('../posts/*.md')
+const tags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())]
+const pageTitle = 'Tag Index'
 ---
 
 <Layout title={pageTitle}>
   <h1>Tags</h1>
-  <ul>
-    {tags.map((tag) => (
-      <li>
-        <a href={`/tags/${tag}`}>{tag}</a>
-      </li> 
-    ))}
-  </ul>
+  <Tags tags={tags} style={{ margin: '0 2rem' }} />
 </Layout>
-  
+
 <style>
-h1 {
-  color: var(--purple);
-  margin-bottom: 2rem;
-}
-
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 auto;
-}
-
-ul {
-  padding: 0;
-  margin: 0 2rem;
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-a {
-  display: block;
-  color: var(--gray);
-  padding: 1rem;
-  box-shadow: -5px -5px 20px var(--white),  5px 5px 20px var(--shadow);
-  border-radius: calc(1rem / 2);
-  transition: all 0.2s ease-in-out;
-  cursor: pointer;
-  appearance: none;
-  -webkit-appearance: none;
-}
-
-a:hover {
-  box-shadow: -2px -2px 5px var(--white), 2px 2px 5px var(--shadow);
-}
+  h1 {
+    color: var(--purple);
+    margin-bottom: 2rem;
+  }
 </style>
