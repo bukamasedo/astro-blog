@@ -4,21 +4,28 @@ import Footer from '../components/Footer.astro'
 import '../styles/reset.css'
 
 export interface Props {
-  title: string;
+  title: string
 }
 
-const { title } = Astro.props;
+const { title } = Astro.props
 ---
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-W8QQT58');</script>
+    <script>
+      ;(function (w, d, s, l, i) {
+        w[l] = w[l] || []
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' })
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : ''
+        j.async = true
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl
+        f.parentNode.insertBefore(j, f)
+      })(window, document, 'script', 'dataLayer', 'GTM-W8QQT58')
+    </script>
     <!-- End Google Tag Manager -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -27,61 +34,76 @@ const { title } = Astro.props;
     <meta name="description" content="プログラマー向けのブログサイトです。" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
     <title>{title}</title>
   </head>
   <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W8QQT58"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    <Header />
-    <main>
-      <slot />
-    </main>
-    <Footer />
+    <>
+      <!-- Google Tag Manager (noscript) -->
+      <noscript
+        ><iframe
+          src="https://www.googletagmanager.com/ns.html?id=GTM-W8QQT58"
+          height="0"
+          width="0"
+          style="display:none;visibility:hidden"></iframe></noscript
+      >
+      <!-- End Google Tag Manager (noscript) -->
+      <Header />
+      <main>
+        <slot />
+      </main>
+      <Footer />
+    </>
   </body>
 </html>
+
 <style is:global>
-:root {
-  --white:#fffffe;
-  --background: #EBECF0;
-  --shadow: #BABECC;
-  --gray: #61677C;
-  --black: #2b2c34;
-  --purple: #6246ea;
-  --light-purple: #d1d1e9;
-  --red: #e45858;
-}
+  :root {
+    --white: #fffffe;
+    --background: #ebecf0;
+    --shadow: #babecc;
+    --gray: #61677c;
+    --black: #2b2c34;
+    --purple: #6246ea;
+    --light-purple: #d1d1e9;
+    --red: #e45858;
+  }
 
-html {
-  font-family: 'Zen Kaku Gothic New', sans-serif;
-  background-color: var(--background);
-  color: var(--black);
-}
+  html {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    background-color: var(--background);
+    color: var(--black);
+  }
 
-code {
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
-}
+  code {
+    font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
+      DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+  }
 
-* {
-  outline: none;
-  color: inherit;
-}
+  * {
+    outline: none;
+    color: inherit;
+  }
 
-main {
-  margin: auto;
-  padding: 1rem;
-  max-width: 48rem;
-}
+  main {
+    margin: auto;
+    padding: 1rem;
+    max-width: 48rem;
+  }
 
-h1, h2, h3, li, p {
-  text-shadow: 1px 1px 1px var(--white);
-}
+  h1,
+  h2,
+  h3,
+  li,
+  p {
+    text-shadow: 1px 1px 1px var(--white);
+  }
 
-pre {
-  padding: 1rem;
-  border-radius: calc(1rem / 2);
-}
+  pre {
+    padding: 1rem;
+    border-radius: calc(1rem / 2);
+  }
 </style>

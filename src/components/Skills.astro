@@ -1,9 +1,5 @@
 ---
-import {
-  frontSkills,
-  backSkills,
-  otherSkills
-} from '../datas/skills'
+import { frontSkills, backSkills, otherSkills } from '../datas/skills'
 ---
 
 <div>
@@ -12,75 +8,87 @@ import {
   <div>
     <h3>front-end</h3>
     <ul>
-      {frontSkills.map(skill => (
-        <li>
-          <a href={skill.href} target="_blank" rel="noopener noreferrer">{skill.name}</a>
-        </li> 
-      ))}
+      {
+        frontSkills.map((skill) => (
+          <li>
+            <a href={skill.href} target="_blank" rel="noopener noreferrer">
+              {skill.name}
+            </a>
+          </li>
+        ))
+      }
     </ul>
   </div>
 
   <div>
     <h3>back-end</h3>
     <ul>
-      {backSkills.map(skill => (
-        <li>
-          <a href={skill.href} target="_blank" rel="noopener noreferrer">{skill.name}</a>
-        </li> 
-      ))}
+      {
+        backSkills.map((skill) => (
+          <li>
+            <a href={skill.href} target="_blank" rel="noopener noreferrer">
+              {skill.name}
+            </a>
+          </li>
+        ))
+      }
     </ul>
   </div>
 
   <div>
     <h3>other</h3>
     <ul>
-      {otherSkills.map(skill => (
-        <li>
-          <a href={skill.href} target="_blank" rel="noopener noreferrer">{skill.name}</a>
-        </li> 
-      ))}
+      {
+        otherSkills.map((skill) => (
+          <li>
+            <a href={skill.href} target="_blank" rel="noopener noreferrer">
+              {skill.name}
+            </a>
+          </li>
+        ))
+      }
     </ul>
   </div>
 </div>
 
 <style>
-div {
-  margin: 1rem 0;
-}
+  div {
+    margin: 1rem 0;
+  }
 
-h2 {
-  margin: 0 1rem;
-  margin-bottom: 1rem;
-}
+  h2 {
+    margin: 0 1rem;
+    margin-bottom: 1rem;
+  }
 
-h3 {
-  color: var(--gray);
-  margin: 0 2rem;
-  margin-bottom: 1rem;
-}
+  h3 {
+    color: var(--gray);
+    margin: 0 2rem;
+    margin-bottom: 1rem;
+  }
 
-ul {
-  padding: 0;
-  margin: 0 2rem;
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
+  ul {
+    padding: 0;
+    margin: 0 2rem;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
 
-a {
-  display: block;
-  color: var(--gray);
-  padding: 1rem;
-  box-shadow: -5px -5px 20px var(--white),  5px 5px 20px var(--shadow);
-  border-radius: calc(1rem / 2);
-  transition: all 0.2s ease-in-out;
-  cursor: pointer;
-  appearance: none;
-  -webkit-appearance: none;
-}
+  a {
+    display: block;
+    color: var(--gray);
+    padding: 1rem;
+    box-shadow: -5px -5px 20px var(--white), 5px 5px 20px var(--shadow);
+    border-radius: calc(1rem / 2);
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+  }
 
-a:hover {
-  box-shadow: -2px -2px 5px var(--white), 2px 2px 5px var(--shadow);
-}
+  a:hover {
+    box-shadow: -2px -2px 5px var(--white), 2px 2px 5px var(--shadow);
+  }
 </style>

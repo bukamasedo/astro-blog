@@ -1,13 +1,13 @@
 ---
 import { formatDateToEng } from '../utils/formatDateToEng'
 export interface Props {
-  title: string;
-  href?: string;
-  date: Date;
-  description?: string;
+  title: string
+  href?: string
+  date: Date
+  description?: string
 }
 
-const { href, title, date, description } = Astro.props;
+const { href, title, date, description } = Astro.props
 const { year, month, day } = formatDateToEng(date)
 ---
 
@@ -25,57 +25,59 @@ const { year, month, day } = formatDateToEng(date)
 </li>
 
 <style>
-li {
-  width: 100%;
-  color:#61677C;
-  cursor: pointer;
-  border-radius: calc(1rem / 2);
-  box-sizing: border-box;
-  box-shadow:  inset 2px 2px 5px var(--shadow), inset -5px -5px 10px var(--white);
-  list-style: none;
-  appearance: none;
-  -webkit-appearance: none;
-  transition: all 0.2s ease-in-out;
-}
+  li {
+    width: 100%;
+    color: #61677c;
+    cursor: pointer;
+    border-radius: calc(1rem / 2);
+    box-sizing: border-box;
+    box-shadow: inset 2px 2px 5px var(--shadow),
+      inset -5px -5px 10px var(--white);
+    list-style: none;
+    appearance: none;
+    -webkit-appearance: none;
+    transition: all 0.2s ease-in-out;
+  }
 
-li:hover {
-  box-shadow:  inset 1px 1px 2px var(--shadow), inset -1px -1px 2px var(--white);
-}
+  li:hover {
+    box-shadow: inset 1px 1px 2px var(--shadow),
+      inset -1px -1px 2px var(--white);
+  }
 
-a {
-  padding: 2rem;
-  width: 100%;
-  color: var(--purple);
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-}
+  a {
+    padding: 2rem;
+    width: 100%;
+    color: var(--purple);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
 
-.date_wrap {
-  min-width: 80px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: var(--gray);
-  font-family: 'IBM Plex Mono', monospace;
-  text-shadow: 1px 1px 1px var(--white);
-}
+  .date_wrap {
+    min-width: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--gray);
+    font-family: 'IBM Plex Mono', monospace;
+    text-shadow: 1px 1px 1px var(--white);
+  }
 
-.date_day {
-  font-size: 3rem;
-  font-weight: bold;
-  line-height: 1;
-}
+  .date_day {
+    font-size: 3rem;
+    font-weight: bold;
+    line-height: 1;
+  }
 
-h2 {
-  font-weight: bold;
-  margin: 0;
-}
+  h2 {
+    font-weight: bold;
+    margin: 0;
+  }
 
-p {
-  color: var(--gray);
-  font-size: 1rem;
-  margin: 0;
-}
+  p {
+    color: var(--gray);
+    font-size: 1rem;
+    margin: 0;
+  }
 </style>

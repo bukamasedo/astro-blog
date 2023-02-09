@@ -8,10 +8,30 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "format": "prettier --write './**/*.{ts,astro}' && eslint --fix --ext .ts,.astro src",
+    "astro": "astro",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "./**/*.{js,ts,astro}": "bash -c 'npm run format'"
   },
   "dependencies": {
     "astro": "^2.0.5",
     "astro-icon": "^0.8.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.50.0",
+    "@typescript-eslint/parser": "^5.50.0",
+    "eslint": "^8.33.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-config-standard-with-typescript": "^34.0.0",
+    "eslint-plugin-astro": "^0.23.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.6.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.1",
+    "prettier": "2.8.4",
+    "typescript": "^4.9.5"
   }
 }
